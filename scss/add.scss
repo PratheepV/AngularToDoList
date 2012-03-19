@@ -1,0 +1,45 @@
+@import "_base.scss";
+
+.form{
+	margin:10px;
+	label{
+		width:80%;
+		margin:10px 0px 10px 65px;
+		text-align:left;
+		display:block;
+		font-size: 11px;
+		font-weight:bold;
+		color:$color;
+		input{
+			background-color: #FFFFFF;
+			@include background-image(linear-gradient(center bottom , #FFFFFF 85%, #EEEEEE 99%));
+			border: 1px solid #AAAAAA;
+			@include border-radius(4px);
+			color: $color;
+			cursor: text;
+			height: 24px;
+			margin: 0;
+			overflow: hidden;
+			padding: 1px 0 1px 5px;
+			position: relative;
+			width:100%;
+		}
+		textarea{
+			background-color: #FFFFFF;
+			@include background-image(linear-gradient(center bottom , #FFFFFF 85%, #EEEEEE 99%));
+			border: 1px solid #AAAAAA;
+			@include border-radius(4px);
+			color: $color;
+			cursor: text;
+			width:101%;
+			resize:vertical;
+			height:140px;
+		}
+		select{
+			width:101%;
+		}
+	}	
+}
+.warning{
+	color:$red;
+}

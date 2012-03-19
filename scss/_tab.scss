@@ -1,0 +1,47 @@
+#header {
+	height:80px;
+	@include filter-gradient($bgcolor1, $bgcolor2, vertical); 
+	@include background-image(linear-gradient(top, $bgcolor1 0%,$bgcolor2 50%,$bgcolor2 100%));
+	@include box-shadow(0px 4px 5px -4px rgba(0, 0, 0, 0.4));
+	div.tab {
+		color:$red;
+		width:60px;
+		height:60px;
+		@include border-radius(30px);
+		background:#E0E0E0;		
+		text-align:center;
+		position:relative;
+		float:left;
+		top:10px;
+		border:solid 1px #DADADA;
+		cursor:pointer;
+		&:hover{
+			border:1px solid #D0D0D0;
+			@include scale3d(1.1,1.1,1.1);
+		}
+	}
+	.new{
+		left:70px;
+		&:after{
+			content:"+";
+			font-size:54px;
+		}
+	}
+	.list {
+		left:450px;
+		&:after{
+			content:"!!!";
+			@include transform( rotate(90deg) );
+			font-size:45px;
+		}
+	}
+	input.search{
+		height: 35px;
+		margin: 25px 38px 0 50px;
+		width: 297px;
+		@include border-radius(5px);
+		background:#FFFFFF;
+		@include background-image(linear-gradient(center bottom , #FFFFFF 85%, #EEEEEE 99%));
+		border: 1px solid #AAAAAA;
+	}
+}

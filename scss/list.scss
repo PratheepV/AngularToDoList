@@ -1,0 +1,170 @@
+@import "_base.scss";
+@import "_tab.scss";
+@import "_btn.scss";
+
+#list {
+	.details {
+		&:first-child {
+			margin-top:20px;
+		}
+		margin:2px 4px 2px 5px;
+		background:#FAFAFA;
+		padding:5px 10px;
+		border-bottom:1px solid $lBorder;
+		font-size:13px;
+		cursor:pointer;
+		.actions{
+			visibility:hidden;
+			&:first-child{
+				padding-right:100px;
+			}
+		}
+		&:hover{
+			.actions{
+				visibility:visible;
+			}
+		}
+		.title{
+			color : $color;
+			font-weight:bold;
+		}
+		.description{
+			color : #555;
+			margin-top:5px;
+		}
+		.done {
+			text-decoration:line-through;
+		}
+		.detailed{
+			padding:10px 0px 0px 10px;
+		}
+		.location{
+			padding:5px 0px 0px 0px;
+		}
+	}
+}
+
+a {
+	&:link, &:visited {
+		border-bottom: 1px solid $red;
+		color: $red;
+		text-decoration: none;
+	}
+}
+.actions {
+	float:right;
+	list-style: none outside none;
+    margin: 0 0 0.25em;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+	&:before,&:after,a:before,a:after{
+		content: "";
+		left: 0;
+		position: absolute;
+		top: 50%;
+	}
+	a{
+		&:visited,&:link{
+			border: 0 none;
+			color: $red;
+			display: block;
+			padding-left: 28px;
+		}
+		&:before,&:after{
+			background: none repeat scroll 0 0 $red;
+			margin: -8px 0 0;
+		}
+	}
+	.edit {
+		a{
+			&:after {
+				@include transform(rotate(-45deg));
+				border-left: 1px solid #FFFFFF;
+				height: 6px;
+				left: 3px;
+				margin-top: -3px;
+				width: 13px;
+			}
+			&:before{
+				@include transform(skew(-10deg,-10deg));
+				background: none repeat scroll 0 0 $red;
+				height: 5px;
+				left: 3px;
+				margin-top: 2px;
+				width: 5px;
+			}
+		}
+	}
+	.delete {
+		a {
+			&:before {
+				@include transform(rotate(45deg));
+				background: none repeat scroll 0 0 $red;
+				height: 15px;
+				left: 6px;
+				margin-top: -7px;
+				width: 5px;
+			}
+			&:after {
+				@include transform(rotate(45deg));
+				background: none repeat scroll 0 0 $red;
+				height: 5px;
+				left: 1px;
+				margin-top: -2px;
+				width: 15px;
+			}
+			&:hover,&:focus,&:active{
+				&:after,&:before{
+					background: none repeat scroll 0 0 #730800;
+				}
+			}
+		}
+	}
+}
+.success {
+		color: #7F913C;
+		margin-right:-5px;
+		&:before {
+			@include transform(rotate(45deg));
+			border-color: #7F913C;
+			border-style: solid;
+			border-width: 0 5px 5px 0;
+			height: 12px;
+			left: 6px;
+			margin-top: -11px;
+			width: 5px;
+		}
+}
+
+.help {
+    color: #2385BA;
+	&:before {
+		background: none repeat scroll 0 0 #2385BA;
+		border-radius: 16px 16px 16px 16px;
+		color: #FFFFFF;
+		content: "?";
+		font-size: 14px;
+		font-weight: bold;
+		height: 16px;
+		left: 3px;
+		line-height: 15px;
+		margin-top: -8px;
+		text-align: center;
+		width: 16px;
+	}
+}
+
+.empty {
+	background: none repeat scroll 0 0 #FCFCFC;
+    @include border-radius(10px);
+    height: 100px;
+    margin: 0 10px;
+    text-align: center;
+	color:$color;
+	h4{
+		padding-top:30px;
+		margin-bottom:0px;
+	}
+}

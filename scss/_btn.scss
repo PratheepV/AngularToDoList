@@ -1,0 +1,26 @@
+.btn {
+	@include filter-gradient($bgcolor1, $bgcolor2, vertical); // IE6-9
+	@include background-image(linear-gradient(top, $bgcolor1 0%,$bgcolor2 50%,$bgcolor2 100%));
+	@include border-radius(3px);
+	padding:0px 8px;
+	display:inline-block;   
+	color:$color !important;
+	font-weight:bold;
+	background-color: $bgcolor1; // Old browsers
+	border: solid 1px rgba(0,0,0,0.1) !important;
+	cursor:pointer;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 27px;
+	margin-left:10px;
+	&:hover {
+		text-decoration: none;
+		border:solid 1px $border;
+	}
+}
+.save{
+	color:#FFF !important;
+	@include background-image(linear-gradient(top, #7FB13C 0%,#7FA13C 50%,#7F913C 100%));
+	border:1px solid #7F713C !important;
+}
